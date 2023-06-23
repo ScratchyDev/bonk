@@ -6,29 +6,36 @@ public class BaseWeapon : MonoBehaviour
     [Header("Weapon Attributes")]
     public int damage;
     public float reach;
+    public float attackCooldown;
 
     [Header("References")]
     public EnergyManager energyManager;
     Animator animator;
 
     bool attacking;
+    float cooldown;
 
     void Start(){
         animator = GetComponent<Animator>();
         attacking = false;
     }
 
+    void Update(){
+        cooldown -= Time.deltaTime;
+    }
+
     public void Attack(){
         if(attacking == false){
-        animator.SetBool("attacking", true);
-        attacking = true;
-        StartCoroutine(StopAttack());
+            animator.SetBool("attacking", true);
+            attacking = true;
+            StartCoroutine(StopAttack());
         }
     }
 
     void OnTriggerEnter2D(Collider2D collider2D){
         Enemy enemy = collider2D.gameObject.GetComponent<Enemy>();
-        if(enemy != null){
+        if(enemy != null && cooldown <= 0){
+            cooldown = attackCooldown;
             enemy.Stun();
         }
         else{

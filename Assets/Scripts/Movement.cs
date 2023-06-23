@@ -65,4 +65,12 @@ public class Movement : MonoBehaviour {
             energyManager.TakeEnergy(25);
         }
     }
+
+    void OnCollisionEnter2D(Collision2D collision){
+        if(collision.gameObject.GetComponent<SliceBehaviour>() != null){
+            energyManager.TakeEnergy(100);
+            Destroy(collision.gameObject);
+            rb.AddForce(transform.right * -3000f * transform.localScale.x);
+        }
+    }
 }

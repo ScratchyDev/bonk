@@ -4968,7 +4968,7 @@ MonoBehaviour:
   stunTime: 3
   mass: 5
   maxEnergy: 3
-  attackTime: 10
+  attackTime: 5
   attackRange: 3
   player: {fileID: 844750525}
   energySlider: {fileID: 1385982061}
@@ -6876,6 +6876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   reach: 3
+  attackCooldown: 0.75
   energyManager: {fileID: 2107150471}
 --- !u!95 &2023721718
 Animator:
