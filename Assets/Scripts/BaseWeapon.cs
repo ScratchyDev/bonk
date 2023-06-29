@@ -36,7 +36,7 @@ public class BaseWeapon : MonoBehaviour
         Enemy enemy = collider2D.gameObject.GetComponent<Enemy>();
         if(enemy != null && cooldown <= 0){
             cooldown = attackCooldown;
-            enemy.Stun();
+            enemy.Stun(damage);
         }
         else{
             Boss boss = collider2D.gameObject.GetComponent<Boss>();
@@ -50,5 +50,9 @@ public class BaseWeapon : MonoBehaviour
         yield return new WaitForSeconds(0.75f);
         animator.SetBool("attacking", false);
         attacking = false;
+    }
+
+    public virtual void WeaponFunction(){
+        Debug.Log("No weapon function");
     }
 }

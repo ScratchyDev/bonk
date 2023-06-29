@@ -66,8 +66,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Stun(){
-        energy--;
+    public void Stun(int amount){
+        energy -= amount;
         if(energy <= 0 && !stun){
             StartCoroutine(Stun2());
         }
