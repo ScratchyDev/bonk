@@ -6915,6 +6915,8 @@ GameObject:
   - component: {fileID: 2107150475}
   - component: {fileID: 2107150474}
   - component: {fileID: 2107150473}
+  - component: {fileID: 2107150477}
+  - component: {fileID: 2107150478}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6970,8 +6972,11 @@ MonoBehaviour:
   boss: {fileID: 0}
   player: {fileID: 844750524}
   countdown: {fileID: 200848385}
+  saveManager: {fileID: 2107150477}
+  sceneLoader: {fileID: 2107150478}
   spawnPoint: {fileID: 1393557956}
   isBoss: 0
+  currentLevel: 4
   counting: 0
 --- !u!114 &2107150474
 MonoBehaviour:
@@ -6986,7 +6991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {fileID: 844750526}
-  baseWeapon: {fileID: 0}
+  baseWeapon: {fileID: 2023721719}
 --- !u!114 &2107150475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7021,3 +7026,29 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &2107150477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107150470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d88cb043da2eeefdb078dae066579dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completionLevel: 0
+--- !u!114 &2107150478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107150470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a612572b04cb8e56cab5aeb22e1d8a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveManager: {fileID: 2107150477}

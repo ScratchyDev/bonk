@@ -6,7 +6,9 @@ public class SceneLoader : MonoBehaviour
     public SaveManager saveManager;
     
     public void LoadScene(int i){
-        saveManager.SavePlayer();
-        SceneManager.LoadScene(i);
+        if(saveManager.completionLevel >= i - 1){
+            saveManager.SavePlayer();
+            SceneManager.LoadScene(i);
+        }
     }
 }

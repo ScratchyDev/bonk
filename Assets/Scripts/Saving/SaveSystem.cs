@@ -9,6 +9,7 @@ public static class SaveSystem
 		BinaryFormatter binaryFormatter = new BinaryFormatter();
 		FileStream fileStream = new FileStream(Application.persistentDataPath + "/player.gamer", FileMode.Create);
 		PlayerData graph = new PlayerData(saves);
+		
 		binaryFormatter.Serialize(fileStream, graph);
 		fileStream.Close();
 	}
@@ -20,6 +21,7 @@ public static class SaveSystem
 		{
 			BinaryFormatter binaryFormatter = new BinaryFormatter();
 			FileStream fileStream = new FileStream(text, FileMode.Open);
+
 			PlayerData result = binaryFormatter.Deserialize(fileStream) as PlayerData;
 			fileStream.Close();
 			return result;

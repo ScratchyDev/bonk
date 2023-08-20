@@ -7,6 +7,7 @@ public class SaveManager : MonoBehaviour
 	public void LoadPlayer()
 	{
 		PlayerData playerData = SaveSystem.LoadPlayer();
+		completionLevel = playerData.completionLevel;
 	}
 
 	private void Start()
