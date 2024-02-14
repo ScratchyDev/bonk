@@ -20,4 +20,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Grassland_Levels/Level_4.unity
     guid: ec89a1cad66af59d08cebdbf55c889ff
+  - enabled: 1
+    path: Assets/Scenes/Grassland_Levels/Level_5 (Boss).unity
+    guid: a890e8eb7ee72a67591c30fe0f0dff5a
+  - enabled: 1
+    path: Assets/Scenes/Honeyland_Levels/Gun.unity
+    guid: 625998122601098998208c74db4007d5
+  - enabled: 1
+    path: Assets/Scenes/Honeyland_Levels/Gun_Upgrade.unity
+    guid: 71b4bdf7bd57b83ef80e02105aeb2427
   m_configObjects: {}

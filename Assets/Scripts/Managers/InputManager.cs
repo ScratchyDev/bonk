@@ -7,11 +7,13 @@ public class InputManager : MonoBehaviour
 
     void FixedUpdate(){
         movement.Move(Input.GetAxis("Horizontal"));
+    }
 
+    void Update(){
         if(Input.GetButtonDown("Attack")){
             baseWeapon.Attack();
         }
-
+        
         if(Input.GetButtonDown("Dash")){
             movement.Dash();
         }

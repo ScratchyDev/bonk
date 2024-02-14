@@ -12,23 +12,24 @@ public class Movement : MonoBehaviour {
     public EnergyManager energyManager;
     public Transform groundCheck;
     public LayerMask ground;
+    //[HideInInspector] 
+    public bool isGrounded;
 
     [HideInInspector]
     public int direction;
     Rigidbody2D rb;
-    int currentJumps;
+    public int currentJumps;
 
     void Start(){
         rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate(){
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.position, 0.1f, ground);
-		for (int i = 0; i < colliders.Length; i++)
-		{
-			if (colliders[i].gameObject != gameObject)
-				currentJumps = 0;
-		}
+        isGrounded = Physics2D.OverlapArea(new Vector2(transform.position.x - 0.5f, transform.position.y - 1f), new Vector2(transform.position.x + 0.5f, transform.position.y - 1.1f), ground);
+        
+        if(isGrounded){
+            currentJumps = 1;
+        }
 
         if(rb.velocity.x > 5){
             rb.velocity = new Vector2(5, rb.velocity.y);
@@ -52,6 +53,7 @@ public class Movement : MonoBehaviour {
     }
 
     public void Jump(){
+        // if(currentJumps < maxJumps && energyManager.energy > 25){
         if(currentJumps < maxJumps && energyManager.energy > 25){
             currentJumps++;
             rb.AddForce(transform.up * jumpForce);

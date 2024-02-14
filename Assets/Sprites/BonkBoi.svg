@@ -7,6 +7,8 @@
    viewBox="0 0 82.754715 157.17503"
    version="1.1"
    id="svg5"
+   sodipodi:docname="BonkBoi.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +23,16 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     showgrid="false">
+     showgrid="false"
+     inkscape:zoom="1.3902944"
+     inkscape:cx="173.34458"
+     inkscape:cy="321.51464"
+     inkscape:window-width="2476"
+     inkscape:window-height="1371"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
     <sodipodi:guide
        position="-69.574194,218.07033"
        orientation="0,793.70079"
@@ -91,7 +102,7 @@
      id="layer1"
      transform="translate(-69.574193,-60.895291)">
     <path
-       style="fill:#669132;fill-opacity:1;stroke:#000000;stroke-width:7.5;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#669132;fill-opacity:1;stroke:#000000;stroke-width:5;stroke-dasharray:none;stroke-opacity:1"
        d="m 73.525923,98.893478 c -0.310348,35.858972 -0.256976,45.534522 0.119789,80.850402 0.217772,20.41276 21.707002,34.38124 38.582298,34.57471 15.39368,0.17649 35.28088,-13.68512 36.09936,-34.49602 0.81848,-20.8109 -0.72259,-45.34144 0.19421,-82.80884 C 148.89971,81.560318 135.77179,65.111961 112.25282,64.653313 89.453278,64.208695 73.666764,82.620069 73.525923,98.893478 Z"
        id="path793"
        sodipodi:nodetypes="ssszsss" />

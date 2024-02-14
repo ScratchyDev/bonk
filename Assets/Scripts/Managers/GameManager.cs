@@ -51,8 +51,8 @@ public class GameManager : MonoBehaviour {
         }
         counting = true;
         countdown.SetActive(true);
-        countdown.GetComponent<CountDownTimer>().StartTimer(5f);
-        yield return new WaitForSeconds(5f);
+        countdown.GetComponent<CountDownTimer>().StartTimer(3f);
+        yield return new WaitForSeconds(3f);
         sceneLoader.LoadScene(0);
     }
 }
