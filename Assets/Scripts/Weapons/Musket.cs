@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Musket : BaseWeapon
 {
-    [Header("Variables")]
+    [Header("Musket Variables")]
     public float bulletForce;
     public float scopeMultiplier;
     public bool dealsDamage;
 
-    [Header("References")]
+    [Header("Musket References")]
     public GameObject musketBall;
     public Transform shootingPoint;
     public Movement playerMovement;
@@ -17,8 +17,8 @@ public class Musket : BaseWeapon
 
     private float currentScopeMultiplier;
 
-    public override void WeaponFunction()
-    {
+    public override void WeaponFunction(){
+        
         if(scope != null){
             if(scope.scoped){
                 scope.ScopeExit();

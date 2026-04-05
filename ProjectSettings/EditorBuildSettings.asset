@@ -9,24 +9,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 08732bf7ce693bcdc9a0ed2bbf6a04f7
   - enabled: 1
-    path: Assets/Scenes/Grassland_Levels/Level_1.unity
+    path: Assets/Scenes/Tutorials/Level_1.unity
     guid: 34ad58482d2957e3c8132369ac3a2401
   - enabled: 1
-    path: Assets/Scenes/Grassland_Levels/Level_2.unity
+    path: Assets/Scenes/Tutorials/Level_2.unity
     guid: f2d53a680d3879eda9977b5c2b0a047e
   - enabled: 1
-    path: Assets/Scenes/Grassland_Levels/Level_3.unity
+    path: Assets/Scenes/Tutorials/Level_3.unity
     guid: fe6da390cea69e730bd87ea1fd4c865f
   - enabled: 1
-    path: Assets/Scenes/Grassland_Levels/Level_4.unity
+    path: Assets/Scenes/Tutorials/Level_4.unity
     guid: ec89a1cad66af59d08cebdbf55c889ff
   - enabled: 1
-    path: Assets/Scenes/Grassland_Levels/Level_5 (Boss).unity
+    path: Assets/Scenes/Tutorials/Level_5 (Boss).unity
     guid: a890e8eb7ee72a67591c30fe0f0dff5a
   - enabled: 1
-    path: Assets/Scenes/Honeyland_Levels/Gun.unity
+    path: Assets/Scenes/Tutorials/Level_6.unity
     guid: 625998122601098998208c74db4007d5
   - enabled: 1
-    path: Assets/Scenes/Honeyland_Levels/Gun_Upgrade.unity
+    path: Assets/Scenes/Tutorials/Level_7.unity
     guid: 71b4bdf7bd57b83ef80e02105aeb2427
+  - enabled: 1
+    path: Assets/Scenes/Tutorials/Level_8.unity
+    guid: 69fa3815712955c6b9a88fbd511eb007
+  - enabled: 1
+    path: Assets/Scenes/Main Game Weak Enemy.unity
+    guid: 64eb601d9bd569f1e8a9b4191a52c4ea
   m_configObjects: {}

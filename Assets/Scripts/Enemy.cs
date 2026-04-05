@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
     [Header("Other")]
     public Color defaultColour;
     public Color stunColour;
+    public Color attackWarningColour;
 
     [HideInInspector]
     public bool dead;

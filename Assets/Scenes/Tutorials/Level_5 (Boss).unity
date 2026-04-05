@@ -2131,13 +2131,15 @@ MonoBehaviour:
   speed: 25
   jumpForce: 250
   dashForce: 750
-  maxJumps: 1
+  maxJumps: 2
   energyManager: {fileID: 907941246}
   groundCheck: {fileID: 1159619587}
   ground:
     serializedVersion: 2
     m_Bits: 1024
+  isGrounded: 0
   direction: 0
+  currentJumps: 0
 --- !u!50 &392244973
 Rigidbody2D:
   serializedVersion: 4

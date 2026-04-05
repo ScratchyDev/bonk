@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class BaseWeapon : MonoBehaviour
 {
-    [Header("Weapon Attributes")]
+    [Header("Weapon Variables")]
     public int damage;
     public float reach;
     public float attackCooldown;
 
     public bool isRanged;
 
-    [Header("References")]
+    [Header("Weapon References")]
     public EnergyManager energyManager;
     Animator animator;
 
@@ -27,6 +27,7 @@ public class BaseWeapon : MonoBehaviour
     }
 
     public void Attack(){
+        Debug.Log("Attack");
         if(attacking == false){
             animator.SetBool("attacking", true);
             attacking = true;
