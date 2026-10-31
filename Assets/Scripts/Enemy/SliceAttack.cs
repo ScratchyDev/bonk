@@ -9,7 +9,6 @@ public class SliceAttack : EnemyAttack
     public GameObject player;
 
     public override void Attack(){
-        Debug.Log("Slice Attack");
         SliceBehaviour currentSlice = Instantiate(slicePrefab, transform.position, transform.rotation).GetComponent<SliceBehaviour>();
         currentSlice.player = player;
 

@@ -18,27 +18,24 @@ public class Musket : BaseWeapon
     private float currentScopeMultiplier;
 
     public override void WeaponFunction(){
-        
-        if(scope != null){
-            if(scope.scoped){
-                scope.ScopeExit();
+        // Reset every shot. Before, a grounded scoped shot re-used the multiplier of an earlier airborne shot.
+        currentScopeMultiplier = 1f;
 
-                if(!playerMovement.isGrounded){
-                    currentScopeMultiplier = scopeMultiplier;
-                    Debug.Log("epik gamr");
-                }
-            } else {
-                currentScopeMultiplier = 1f;
+        if(scope != null && scope.scoped){
+            scope.ScopeExit();
+
+            if(!playerMovement.isGrounded){
+                currentScopeMultiplier = scopeMultiplier;
             }
-        } else {
-            currentScopeMultiplier = 1f;
         }
 
         Rigidbody2D rb = Instantiate(musketBall, shootingPoint.position, Quaternion.identity).GetComponent<Rigidbody2D>();
         rb.AddForce(transform.up * bulletForce * currentScopeMultiplier);
-        if(rb.gameObject.GetComponent<MusketBall>() != null && dealsDamage){
+
+        MusketBall ball = rb.gameObject.GetComponent<MusketBall>();
+        if(ball != null && dealsDamage){
             rb.gameObject.GetComponent<Collider2D>().isTrigger = true;
-            rb.gameObject.GetComponent<MusketBall>().damage = damage;
+            ball.damage = EffectiveDamage;
         }
     }
 }

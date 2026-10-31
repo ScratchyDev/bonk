@@ -18,7 +18,7 @@ public class EnergyManager : MonoBehaviour {
 
     void FixedUpdate(){
         if(energy < maxEnergy){
-            energy += rechargeRate / 10;
+            energy = Mathf.Min(maxEnergy, energy + rechargeRate / 10);
         }
 
         energyBar.value = energy;
@@ -26,5 +26,9 @@ public class EnergyManager : MonoBehaviour {
 
     public void TakeEnergy(float amount){
         energy -= amount;
+    }
+
+    public void Refill(float amount){
+        energy = Mathf.Min(maxEnergy, energy + amount);
     }
 }

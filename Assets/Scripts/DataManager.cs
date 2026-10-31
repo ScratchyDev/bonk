@@ -8,6 +8,8 @@ public class DataManager : MonoBehaviour
 
     public void Reset(){
         saveManager.completionLevel = 0;
+        saveManager.bestTimes = new float[0];
+        saveManager.bestWave = 0;
         saveManager.SavePlayer();
     }
 
