@@ -5,6 +5,8 @@ using UnityEngine;
 public class Boss_Idle : StateMachineBehaviour {
 
     public float speed = 2f;
+    [Tooltip("Chase speed in units per second. Replaces the old 0.1 units per frame, so it no longer depends on frame rate (6 = the old speed at 60 fps).")]
+    public float chaseSpeed = 6f;
     public float attackDistance = 2.5f;
     public float runDistance = 15f;
 
@@ -18,7 +20,7 @@ public class Boss_Idle : StateMachineBehaviour {
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex){
         Transform transform = animator.GetComponent<Transform>();
-        transform.position = Vector2.MoveTowards(transform.position, player.position, .1f);
+        transform.position = Vector2.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
 
         if(Vector2.Distance(player.position, rb.position) <= attackDistance){
             animator.SetTrigger("Attack");

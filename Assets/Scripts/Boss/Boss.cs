@@ -22,6 +22,7 @@ public class Boss : MonoBehaviour
     public int health;
 
     GameObject player;
+    Rigidbody2D playerRb;
     Rigidbody2D rb;
     Animator bossAnim;
     
@@ -33,6 +34,7 @@ public class Boss : MonoBehaviour
         
         healthAnim.SetInteger("health", health);
         player = GameObject.FindGameObjectWithTag("Player");
+        playerRb = player.GetComponent<Rigidbody2D>();
         rb = GetComponent<Rigidbody2D>();
         bossAnim = GetComponent<Animator>();
 
@@ -44,7 +46,8 @@ public class Boss : MonoBehaviour
     void Update(){
         energySlider.value = energy;
 
-        if(transform.position.y <= -10){
+        // `!dead` stops the health from counting down further every frame once the boss is already beaten
+        if(!dead && transform.position.y <= -10){
             health--;
             if(health > 0){
                 if(health == 1){
@@ -63,9 +66,21 @@ public class Boss : MonoBehaviour
     }
 
     public void Stun(){
-        energy--;
+        Hit(1);
+    }
+
+    /// Same as Stun() but lets a source take more than one point of energy.
+    /// (Named differently on purpose: Stun() may be used as an animation event, which dislikes overloads.)
+    public void Hit(int amount){
+        if(dead) return;
+
+        energy -= amount;
+        GameFeel.PopText(transform.position + Vector3.up * 2.5f, "-" + amount, Color.white, 4f);
+
         if(energy <= 0 && !stun){
             stun = true;
+            GameFeel.PopText(transform.position + Vector3.up * 3.2f, "STUNNED!", new Color(1f, 0.85f, 0.2f), 6f);
+            GameFeel.HitStop(0.1f);
             StartCoroutine(Stun2());
         }
     }
@@ -82,12 +97,18 @@ public class Boss : MonoBehaviour
         stun = false;
     }
 
+    // The attacks used to push the player along world +X no matter where the boss stood.
+    // Now the player is always pushed away from the boss.
+    float DirectionAwayFromBoss(){
+        return player.transform.position.x < transform.position.x ? -1f : 1f;
+    }
+
     public void Attack(){
-        player.GetComponent<Rigidbody2D>().AddForce(player.transform.right * attackPower);
+        playerRb.AddForce(Vector2.right * DirectionAwayFromBoss() * attackPower);
     }
 
     public void EnragedAttack(){
-        player.GetComponent<Rigidbody2D>().AddForce(player.transform.right * (attackPower * 2.5f));
+        playerRb.AddForce(Vector2.right * DirectionAwayFromBoss() * (attackPower * 2.5f));
         rb.AddForce(transform.right * (attackPower));
     }
 }

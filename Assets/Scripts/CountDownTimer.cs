@@ -1,5 +1,5 @@
 using UnityEngine;
-using System;
+using System.Globalization;
 using TMPro;
 
 public class CountDownTimer : MonoBehaviour {
@@ -9,7 +9,7 @@ public class CountDownTimer : MonoBehaviour {
     void Update(){
         if(countdown > 0)
         countdown -= Time.deltaTime;
-        timeText.text = (Math.Round(countdown, 1).ToString() + "s");
+        timeText.text = Mathf.Max(0f, countdown).ToString("0.0", CultureInfo.InvariantCulture) + "s";
     }
 
     public void StartTimer(float time){
